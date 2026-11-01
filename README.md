@@ -9,7 +9,7 @@ Source for <https://rongyw.github.io>, built with the [al-folio](https://github.
 | Name, site URL, site-wide settings | `_config.yml` |
 | Home page (bio, job market paper, "Outside research" photo) | `_pages/about.md` |
 | Address under the photo | `profile.more_info` in `_pages/about.md` |
-| Sidebar icons (CV, email, Scholar, SSRN, LinkedIn, GitHub) | `_data/socials.yml` |
+| Sidebar icons (row 1: CV, email, LinkedIn; row 2: Scholar, SSRN, GitHub) | `_data/socials.yml` |
 | Research page: papers, coauthors, abstracts, links | `_bibliography/papers.bib` |
 | Research page sections | `category` field in each `.bib` entry: `publication`, `working`, `progress` |
 | Teaching page | `_pages/teaching.md` |

@@ -1,12 +1,14 @@
 # this file contains the social media links and usernames of the author
 # the socials will be displayed in the order they are defined here
 # for more information, please refer to the documentation of jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
-# cv_pdf: /assets/pdf/CV_Rong_Yuwen.pdf # path to your CV PDF file; uncomment once the updated CV is in assets/pdf/
+# Sidebar shows these in two rows of three (see .profile .social in _sass/_custom.scss):
+# row 1 = CV, email, LinkedIn; row 2 = Google Scholar, SSRN, GitHub. Keep this order.
+cv_pdf: /cv/ # points at the CV page while no PDF is posted; change to /assets/pdf/CV_Rong_Yuwen.pdf once the updated CV is added
 email: ryuwen2@illinois.edu # your email address
+linkedin_username: rong-yuwen-749029224
 scholar_userid: HnsajbwAAAAJ # your Google Scholar ID
 ssrn: # SSRN has no built-in entry in jekyll-socials, so it is a custom social using the Academicons SSRN icon
   logo: ai ai-ssrn
   title: SSRN
   url: https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=7842999
-linkedin_username: rong-yuwen-749029224
 github_username: Rongyw

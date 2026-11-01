@@ -149,3 +149,13 @@ article:has(> .profile) > .clearfix h3 {
     margin: 0 auto;
   }
 }
+
+// About page: sidebar icons in two rows of three (CV, email, LinkedIn /
+// Scholar, SSRN, GitHub), following the order in _data/socials.yml
+.profile .social .contact-icons {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  justify-content: center;
+  column-gap: 0.9rem;
+  row-gap: 0.4rem;
+}
