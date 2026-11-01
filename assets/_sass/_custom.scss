@@ -1,0 +1,151 @@
+// -----------------------------------------------------------------------------
+// Site-specific overrides
+// -----------------------------------------------------------------------------
+
+// About page: strict two-column layout (bio text left, photo right), no text
+// wrapping around the floated image. Scoped to `.profile`'s parent so it only
+// affects the about/profile layouts, not every `article` on the site.
+// Grid (not flex) so that other direct children of <article> — the social
+// icon row, news/selected-publications headings, newsletter block — stay
+// full-width and stack below the two-column area instead of joining it.
+article:has(> .profile) {
+  display: grid;
+  grid-template-columns: 1fr 196px; // 70% of the original 280px
+  align-items: start;
+  gap: 2.5rem;
+}
+
+article:has(> .profile) > .profile {
+  grid-column: 2;
+  grid-row: 1;
+  float: none;
+  margin: 0;
+  max-width: 196px; // 70% of the original 280px
+  width: 100%; // overrides the theme's `.profile { width: 30% }` rule, which was
+  // sized for the old full-width float layout and would otherwise compute
+  // against this grid track instead (shrinking the photo far too small)
+
+  .more-info {
+    font-size: 0.9rem; // match the bio text size in .clearfix
+    font-family: inherit; // theme default is monospace, which sets the address
+    // apart from everything else on the page and wastes width in this narrow column
+    text-align: center; // centered under the photo so the photo, address and
+    // social icons all read as one balanced column
+
+    // The theme renders each address line as an inline-block <p>, which would
+    // sit left-aligned regardless of the parent's text-align.
+    p {
+      display: block;
+    }
+  }
+}
+
+article:has(> .profile) > .clearfix {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+  text-align: justify;
+  font-size: 0.9rem; // one step down from the theme's default 1rem body text
+}
+
+article:has(> .profile) > :not(.profile):not(.clearfix) {
+  grid-column: 1 / -1;
+}
+
+// Header (name + subtitle) sits directly above this same article, and with no
+// margin between them the subtitle reads as if it runs into the bio text.
+// Scoped to only the about page's header via the adjacent-article check.
+header.post-header:has(+ article > .profile) {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 576px) {
+  article:has(> .profile) {
+    grid-template-columns: 1fr;
+  }
+
+  article:has(> .profile) > .profile {
+    grid-column: 1;
+    grid-row: 1;
+    max-width: 100%;
+  }
+
+  article:has(> .profile) > .clearfix {
+    grid-column: 1;
+    grid-row: 2; // stack below the photo instead of overlapping it in the single column
+  }
+}
+
+// Social icon row: 50% of theme default, then a further 90% on top (= 45% of default)
+.social .contact-icons {
+  font-size: 1.8rem; // default is 4rem
+
+  a img {
+    width: 1.44rem; // default is 3.2rem
+    height: 1.44rem;
+  }
+}
+
+// On the about page the social row now lives inside .profile, under the
+// address block, instead of centered full-width at the bottom of the page
+// (see _layouts/about.liquid). Left-align it to match the address text.
+.profile .social {
+  text-align: center; // centered to match the address block above it
+  margin-top: 0.75rem;
+
+  .contact-icons {
+    display: block;
+  }
+
+  .contact-note {
+    margin-top: 0.5rem;
+  }
+}
+
+// Teaching page: plain year-grouped list instead of bordered cards
+.teaching-year-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+
+  li {
+    padding: 0.4rem 0;
+  }
+}
+
+// Research page: section headings (Publications / Working Papers / Works in
+// Progress). The theme's h2.bibliography is styled as a grey right-aligned year
+// marker, which reads wrong for named sections, so these use their own class.
+.publications h2.pub-section {
+  font-size: 1.35rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--global-divider-color);
+}
+
+.publications h2.pub-section:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+// About page: "Outside research" photo sits under the bio, inside the text column
+article:has(> .profile) > .clearfix figure {
+  margin-top: 0.75rem;
+}
+
+// About page: "Outside research" heading sized to sit with the 0.9rem bio text
+article:has(> .profile) > .clearfix h3 {
+  font-size: 1.25rem;
+  margin-top: 1.75rem;
+}
+
+// Phones: the single-column layout above lets the photo fill the screen width;
+// cap it so the name, photo and bio all fit near the top
+@media (max-width: 576px) {
+  article:has(> .profile) > .profile {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+}
