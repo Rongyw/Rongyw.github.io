@@ -14,7 +14,7 @@ Source for <https://rongyw.github.io>, built with the [al-folio](https://github.
 | Research page sections | `category` field in each `.bib` entry: `publication`, `working`, `progress` |
 | Teaching page | `_pages/teaching.md` |
 | CV PDF | Not posted yet. Add it as `assets/pdf/CV_Rong_Yuwen.pdf`, then follow the comment in `_pages/cv.md` |
-| Photos | `assets/img/profile.jpg`, `assets/img/garden.jpg` |
+| Photos | `assets/img/profile.jpg`; "Outside research" photos `assets/img/garden.jpg`, `assets/img/photo_*.jpg` (resized to 1600 px on the long side) |
 | Layout and style tweaks | `_layouts/about.liquid`, `_sass/_custom.scss` (keep `assets/_sass/_custom.scss` identical) |
 
 ## Updating
