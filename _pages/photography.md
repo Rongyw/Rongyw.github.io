@@ -24,9 +24,9 @@ photos:
   - file: photo_campfire.jpg
     caption: A campfire at night
   - file: photo_cat_window.jpg
-    caption: A cat by the window
+    caption: My cat
   - file: photo_cat.jpg
-    caption: A cat looking up
+    caption: My cat
 ---
 
 Some photos I have taken. Click a photo to see it larger.
