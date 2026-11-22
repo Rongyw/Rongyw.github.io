@@ -16,6 +16,7 @@ Source for <https://rongyw.github.io>, built with the [al-folio](https://github.
 | CV PDF | Not posted yet. Add it as `assets/pdf/CV_Rong_Yuwen.pdf`, then follow the comment in `_pages/cv.md` |
 | Photos | `assets/img/profile.jpg`; "Outside research" photo `assets/img/garden.jpg`; photography page `assets/img/photo_*.jpg` (all resized to 1600 px on the long side) |
 | Photography page | `_pages/photography.md` |
+| Google Search Console verification | `googlea813565d3cbc9ef8.html` at the repo root. Do not delete or rename it, or the verification lapses |
 | Layout and style tweaks | `_layouts/about.liquid`, `_sass/_custom.scss` (keep `assets/_sass/_custom.scss` identical) |
 
 ## Updating
