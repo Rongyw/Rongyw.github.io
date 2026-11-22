@@ -296,6 +296,11 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+  # Google Search Console verification file: must stay at the root, but is not a page
+  - scope:
+      path: "googlea813565d3cbc9ef8.html"
+    values:
+      sitemap: false
 
 sass:
   style: compressed
